@@ -1,0 +1,7 @@
+/*Install dependencies
+
+Run linters (e.g., ESLint for JS)
+
+Run unit tests (Jest for backend, Vitest for frontend)
+
+Build app (to check for build errors)*/
