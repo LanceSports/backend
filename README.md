@@ -10,3 +10,8 @@ Banele: setup cd-> that eeds decision on what hosting playfrom
   - elsint and prettier so to keep code clean
   - add these configs to both frot and back
  - in CI
+- dockerisation ?? expnad docker.compose to include frontendconatainer
+- error logging- Winston/Pino and bugs -Sentry
+- how 
+- websockets??
+- 
