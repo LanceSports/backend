@@ -2,24 +2,24 @@
 ## Project Structure
 
 backend/
-├── src/
-│ ├── controllers/ # Request handlers (logic for routes)
-│ ├── models/ # Database models and schemas
-│ ├── routes/ # Express route definitions
-│ ├── services/ # Business logic and external API calls
-│ ├── middleware/ # Express middleware (e.g., authentication, logging)
-│ ├── utils/ # Utility and helper functions
-│ ├── app.js # Express app setup (exports the app instance)
-│ └── server.js # Server start script (starts the Express app)
-├── tests/ # Jest test files (mirrors src structure)
-│ ├── controllers/
-│ ├── models/
-│ └── ... # Test files named like source files, e.g. app.test.js
-├── .eslintrc.json # ESLint configuration for code quality
-├── .prettierrc # Prettier configuration for code formatting
-├── package.json # Node.js project manifest and scripts
-├── jest.config.js # Jest configuration for testing
-└── README.md # This file
+- ├── src/
+- │ ├── controllers/ # Request handlers (logic for routes)
+- │ ├── models/ # Database models and schemas
+- │ ├── routes/ # Express route definitions
+-│ ├── services/ # Business logic and external API calls
+- │ ├── middleware/ # Express middleware (e.g., authentication, logging)
+- │ ├── utils/ # Utility and helper functions
+- │ ├── app.js # Express app setup (exports the app instance)
+- │ └── server.js # Server start script (starts the Express app)
+- ├── tests/ # Jest test files (mirrors src structure)
+- │ ├── controllers/
+- │ ├── models/
+- │ └── ... # Test files named like source files, e.g. app.test.js
+- ├── .eslintrc.json # ESLint configuration for code quality
+- ├── .prettierrc # Prettier configuration for code formatting
+- ├── package.json # Node.js project manifest and scripts
+- ├── jest.config.js # Jest configuration for testing
+- └── README.md # This file
 - # Backend
 Backend service for handling match data, event logging, and live updates via APIs.
 
