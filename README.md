@@ -13,7 +13,7 @@ Backend service for handling match data, event logging, and live updates via API
 
 ---
 
-## CHATGPT RUNDOWN
+## CHATGPT RUNDOWN for DevOps
 
 ### Phase 1 – Project Foundation  
 We want to set up repos, permissions, branches, and team workflows.
