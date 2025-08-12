@@ -1,4 +1,23 @@
-
+## Suggested Directory Structure 
+backend/
+├── src/
+│   ├── controllers/     # Request handlers (logic for routes)
+│   ├── models/          # DB models / schemas
+│   ├── routes/          # Express route definitions
+│   ├── services/        # Business logic, external API calls
+│   ├── middleware/      # Express middleware (auth, logging)
+│   ├── utils/           # Utility/helper functions
+│   ├── app.js           # Express app setup (export app)
+│   └── server.js        # Server start script (runs app)
+├── tests/               # Jest test files (mirrors src structure)
+│   ├── controllers/
+│   ├── models/
+│   └── ...              # test files named like src files, e.g. app.test.js
+├── .eslintrc.json       # ESLint config
+├── .prettierrc          # Prettier config
+├── package.json
+├── jest.config.js       # Jest config file
+└── README.md
 - # Backend
 Backend service for handling match data, event logging, and live updates via APIs.
 
