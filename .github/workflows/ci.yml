@@ -5,3 +5,44 @@ Run linters (e.g., ESLint for JS)
 Run unit tests (Jest for backend, Vitest for frontend)
 
 Build app (to check for build errors)*/
+
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  backend:
+    name: Backend CI
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run lint      # runs eslint
+      - run: npm run format:check  # runs prettier in check mode (no changes)
+      - run: npm test          # run backend tests with Jest (skeleton)
+
+  frontend:
+    name: Frontend CI
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm test          # run frontend tests with Jest (skeleton)
