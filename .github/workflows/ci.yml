@@ -6,43 +6,43 @@ Run unit tests (Jest for backend, Vitest for frontend)
 
 Build app (to check for build errors)*/
 
-name: CI
+name: CI  # Name of the workflow
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main]  # Run workflow on PRs targeting main branch
   push:
-    branches: [main]
+    branches: [main]  # Run workflow on direct pushes to main branch
 
 jobs:
   backend:
-    name: Backend CI
-    runs-on: ubuntu-latest
+    name: Backend CI  # Job name for backend tasks
+    runs-on: ubuntu-latest  # Use latest Ubuntu runner environment
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: ./backend  # Run all commands in backend folder
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4  # Checkout the repo code
+      - uses: actions/setup-node@v4  # Setup Node.js environment
         with:
-          node-version: 20
-      - run: npm ci
-      - run: npm run lint      # runs eslint
-      - run: npm run format:check  # runs prettier in check mode (no changes)
-      - run: npm test          # run backend tests with Jest (skeleton)
+          node-version: 20  # Use Node.js version 20
+      - run: npm ci  # Install exact dependencies from package-lock.json
+      - run: npm run lint  # Run ESLint to check code quality/style
+      - run: npm run format:check  # Run Prettier to check code formatting (no changes)
+      - run: npm test  # Run Jest tests (pass even if no tests exist yet)
 
   frontend:
-    name: Frontend CI
-    runs-on: ubuntu-latest
+    name: Frontend CI  # Job name for frontend tasks
+    runs-on: ubuntu-latest  # Same Ubuntu environment for consistency
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: ./frontend  # Run commands in frontend folder
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4  # Checkout repo code
+      - uses: actions/setup-node@v4  # Setup Node.js
         with:
-          node-version: 20
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run format:check
-      - run: npm test          # run frontend tests with Jest (skeleton)
+          node-version: 20  # Same Node.js version as backend
+      - run: npm ci  # Install dependencies exactly
+      - run: npm run lint  # ESLint checks on frontend code
+      - run: npm run format:check  # Prettier format check frontend code
+      - run: npm test  # Run Jest tests for frontend
